@@ -82,14 +82,27 @@ def main():
     test_get_largest_prime_below()
     test_is_antipalindrome()
     test_get_perfect_squares()
-    n=int(input("Dati nr.:"))
-    m=int(input("Dati nr pentru patrate perfecte:"))
-    get_largest_prime_below(n)
-    print(get_largest_prime_below(n))
-    if is_antipalindrome(n) ==True:
-        print("este palindrom")
-    else:
-        print("nu este palindrom")
-    print(get_perfect_squares(n,m))
+    shouldRun=True
+    while shouldRun:
+        print("1.Determinare cel mai mare nr. prim mai mic decat cel dat")
+        print("2.Verificare nr. palindrom")
+        print("3.Cautare si afisare patrate perfecte din intervalul inchis dat")
+        print("4.Iesire")
+        optiune=int(input("Dati optiunea:(1, 2, 3 sau 4)"))
+        if optiune==1:
+            n = int(input("Dati nr.:"))
+            print(get_largest_prime_below(n))
+        if optiune==2:
+            n=int(input("Dati nr:"))
+            if is_antipalindrome(n) == True:
+                print("este palindrom")
+            else:
+                print("nu este palindrom")
+        if optiune==3:
+            n = int(input("Dati nr1.:"))
+            m = int(input("Dati nr2.:"))
+            print(get_perfect_squares(n, m))
+        if optiune==4:
+            shouldRun=False
 
 main()
